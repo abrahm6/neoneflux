@@ -3,6 +3,12 @@
 <head>
   <title>My Page</title>
   <style>
+    @font-face {
+      font-family: "Square Dot Digital-7";
+      src: url("path/to/square-dot-digital-7.woff2") format("woff2");
+      /* Add other font formats (woff, ttf, etc.) if needed */
+    }
+
     body {
       margin: 0;
       padding: 0;
@@ -21,24 +27,14 @@
       z-index: -1;
     }
 
-    #countdown {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      font-size: 36px; /* Adjust the font size as needed */
-      color: #eb1d25;
-      font-family: "Square Dot Digital-7", monospace;
-    }
-
     #logo {
-      position: fixed;
+      position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%) rotateY(0deg);
       width: 400px; /* Adjust the width as needed */
       height: 400px; /* Adjust the height as needed */
       animation: spin 6s linear infinite;
-      z-index: 1;
     }
 
     @keyframes spin {
@@ -49,12 +45,21 @@
         transform: translate(-50%, -50%) rotateY(360deg);
       }
     }
+
+    #countdown {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      font-size: 36px; /* Adjust the font size as needed */
+      color: #eb1d25;
+      font-family: "Square Dot Digital-7", monospace;
+    }
   </style>
   <script>
     function countdownTimer() {
       var countdownElement = document.getElementById("countdown");
       var remainingTime = 100 * 3600; // Start at 100 hours
-      var countdownDuration = 5000; // Total duration in milliseconds (5 seconds)
+      var countdownDuration = 3000; // Total duration in milliseconds (3 seconds)
       var startTime = Date.now();
 
       var countdown = setInterval(function() {
@@ -87,8 +92,9 @@
   </script>
 </head>
 <body>
-  <div id="photo-container"></div>
-  <img id="logo" src="images/logo/logo n 3 red copy.png" alt="Logo">
+  <div id="photo-container">
+    <img id="logo" src="https://gdurl.com/F5OI" alt="Logo">
+  </div>
   <div id="countdown">100:00:00</div>
 </body>
 </html>
