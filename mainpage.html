@@ -1,89 +1,100 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>My Website</title>
+  <title>My Page</title>
   <style>
     @font-face {
-      font-family: 'Square Dot Digital-7';
-      src: url('SquareDotDigital-7.woff');
+      font-family: "Square Dot Digital-7";
+      src: url("path/to/square-dot-digital-7.woff2") format("woff2");
+      /* Add other font formats (woff, ttf, etc.) if needed */
     }
 
     body {
       margin: 0;
       padding: 0;
-      font-family: 'Square Dot Digital-7', monospace;
+      overflow: hidden;
     }
 
-    #video-background {
+    #photo-container {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      background-image: url("images/bg photos/unnamed.jpg"); /* Replace with the correct relative path to your photo */
+      background-size: cover;
+      background-position: center;
       z-index: -1;
     }
 
-    #menu-container {
+    #logo {
       position: absolute;
-      bottom: 20px;
+      top: 50%;
       left: 50%;
-      transform: translateX(-50%);
-      text-align: center;
-      overflow: hidden;
-      width: 200px;
-      border-radius: 25px;
-      cursor: pointer;
-      background: rgba(0, 0, 0, 0.8);
+      transform: translate(-50%, -50%) rotateY(0deg);
+      width: 400px; /* Adjust the width as needed */
+      height: 400px; /* Adjust the height as needed */
+      animation: spin 6s linear infinite;
     }
 
-    .menu {
-      color: white;
-      font-size: 24px;
-      padding: 10px;
-      text-decoration: none;
-      display: block;
-      transition: height 0.5s;
+    @keyframes spin {
+      0% {
+        transform: translate(-50%, -50%) rotateY(0deg);
+      }
+      100% {
+        transform: translate(-50%, -50%) rotateY(360deg);
+      }
     }
 
-    .menu:not(.active) {
-      height: 0;
-      padding: 0;
-      overflow: hidden;
+    #countdown {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      font-size: 36px; /* Adjust the font size as needed */
+      color: #eb1d25;
+      font-family: "Square Dot Digital-7", monospace;
     }
   </style>
-
   <script>
-    function toggleMenu() {
-      var items = document.querySelectorAll('#menu-container .menu');
-      items.forEach(function(item) {
-        item.classList.toggle('active');
-      });
+    function countdownTimer() {
+      var countdownElement = document.getElementById("countdown");
+      var remainingTime = 100 * 3600; // Start at 100 hours
+      var countdownDuration = 3000; // Total duration in milliseconds (3 seconds)
+      var startTime = Date.now();
+
+      var countdown = setInterval(function() {
+        var elapsedTime = Date.now() - startTime;
+        var progress = elapsedTime / countdownDuration;
+
+        if (elapsedTime >= countdownDuration) {
+          clearInterval(countdown);
+          remainingTime = 0;
+          window.location.href = "mainpage.html"; // Redirect to mainpage.html
+        } else {
+          remainingTime = Math.max(100 * 3600 - Math.floor(progress * 100 * 3600), 0);
+        }
+
+        var hours = Math.floor(remainingTime / 3600);
+        var minutes = Math.floor((remainingTime % 3600) / 60);
+        var seconds = remainingTime % 60;
+
+        countdownElement.textContent = `${padZero(hours)}:${padZero(minutes)}:${padZero(seconds)}`;
+      }, 10);
+
+      function padZero(value) {
+        return value.toString().padStart(2, "0");
+      }
     }
 
-    document.addEventListener('click', function(event) {
-      var menuContainer = document.getElementById('menu-container');
-      var targetElement = event.target;
-      var isClickInsideMenu = menuContainer.contains(targetElement);
-      if (!isClickInsideMenu) {
-        var activeMenus = document.querySelectorAll('#menu-container .menu.active');
-        if (activeMenus.length > 0) {
-          toggleMenu();
-        }
-      }
+    document.addEventListener("DOMContentLoaded", function() {
+      countdownTimer();
     });
   </script>
 </head>
 <body>
-  <video autoplay muted loop id="video-background">
-    <source src="C:\Users\abrah\OneDrive\Desktop\.png\bg video\DE2A1EDF-45E6-469A-B88E-B614FA25095F.MP4" type="video/mp4">
-  </video>
-
-  <div id="menu-container" onclick="toggleMenu()">
-    <span class="menu active">Menu</span>
-    <a class="menu" href="social media links.html">Social Media</a>
-    <a class="menu" href="music page.html">Music</a>
-    <a class="menu" href="contact.html">Contact</a>
+  <div id="photo-container">
+    <img id="logo" src="https://gdurl.com/F5OI" alt="Logo">
   </div>
+  <div id="countdown">100:00:00</div>
 </body>
 </html>
