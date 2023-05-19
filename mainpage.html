@@ -1,1 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Website</title>
+  <style>
+    @font-face {
+      font-family: 'Square Dot Digital-7';
+      src: url('SquareDotDigital-7.woff');
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Square Dot Digital-7', monospace;
+    }
+
+    #video-background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    #menu-container {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+      overflow: hidden;
+      width: 200px;
+      border-radius: 25px;
+      cursor: pointer;
+      background: rgba(0, 0, 0, 0.8);
+    }
+
+    .menu {
+      color: white;
+      font-size: 24px;
+      padding: 10px;
+      text-decoration: none;
+      display: block;
+      transition: height 0.5s;
+    }
+
+    .menu:not(.active) {
+      height: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+  </style>
+
+  <script>
+    function toggleMenu() {
+      var items = document.querySelectorAll('#menu-container .menu');
+      items.forEach(function(item) {
+        item.classList.toggle('active');
+      });
+    }
+
+    document.addEventListener('click', function(event) {
+      var menuContainer = document.getElementById('menu-container');
+      var targetElement = event.target;
+      var isClickInsideMenu = menuContainer.contains(targetElement);
+      if (!isClickInsideMenu) {
+        var activeMenus = document.querySelectorAll('#menu-container .menu.active');
+        if (activeMenus.length > 0) {
+          toggleMenu();
+        }
+      }
+    });
+  </script>
+</head>
+<body>
+  <video autoplay muted loop id="video-background">
+    <source src="C:\Users\abrah\OneDrive\Desktop\.png\bg video\DE2A1EDF-45E6-469A-B88E-B614FA25095F.MP4" type="video/mp4">
+  </video>
+
+  <div id="menu-container" onclick="toggleMenu()">
+    <span class="menu active">Menu</span>
+    <a class="menu" href="social media links.html">Social Media</a>
+    <a class="menu" href="music page.html">Music</a>
+    <a class="menu" href="contact.html">Contact</a>
+  </div>
+</body>
+</html>
 
