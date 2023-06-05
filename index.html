@@ -5,9 +5,15 @@
   <title>neoneflux</title>
   <style>
     @font-face {
-      font-family: "Square Dot Digital-7";
-      src: url("path/to/your/font/SquareDotDigital-7.woff2") format("woff2");
-      /* Add other font formats (woff, ttf, etc.) if needed */
+  font-family: "Square Dot Digital-7";
+  src: url("path/to/your/font/SquareDotDigital-7.eot"); /* IE9 Compat Modes */
+  src: url("path/to/your/font/SquareDotDigital-7.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+       url("path/to/your/font/SquareDotDigital-7.woff2") format("woff2"), /* Super Modern Browsers */
+       url("path/to/your/font/SquareDotDigital-7.woff") format("woff"), /* Pretty Modern Browsers */
+       url("path/to/your/font/SquareDotDigital-7.ttf")  format("truetype"), /* Safari, Android, iOS */
+       url("path/to/your/font/SquareDotDigital-7.svg#svgFontName") format("svg"); /* Legacy iOS */
+}
+
     }
 
     body {
@@ -100,3 +106,4 @@
 </body>
 </html>
 ``
+
