@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Social Media Links</title>
+  <title>Music Page</title>
   <style>
     @font-face {
       font-family: 'Square Dot Digital-7';
@@ -12,48 +12,38 @@
     body {
       margin: 0;
       padding: 0;
-      background-image: url("C:/Users/abrah/OneDrive/Desktop/html/images/bg photos/unnamed (1).jpg");
-      background-repeat: no-repeat;
+      background: url('https://i.ibb.co/231M8bS/unnamed-1.jpg') no-repeat center center fixed;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
       background-size: cover;
-      background-position: center;
-      font-family: 'Square Dot Digital-7', Arial, sans-serif;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
     }
 
-    .social-links {
-      list-style: none;
-      padding: 0;
-      display: flex;
-      justify-content: center;
+    #links-container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      font-family: 'Square Dot Digital-7';
+      color: grey;
+      font-size: 36px;
     }
 
-    .social-links li {
-      margin: 10px;
-    }
-
-    .social-links a {
-      color: white;
-      font-size: 24px;
+    #links-container a {
+      display: block;
+      margin-bottom: 20px;
+      color: grey;
       text-decoration: none;
     }
   </style>
-  <script src="https://kit.fontawesome.com/your-font-awesome-kit.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <ul class="social-links">
-    <li>
-      <a href="https://honkforhell.tumblr.com/">Facebook</a>
-    </li>
-    <li>
-      <a href="https://twitter.com/__sSx3__">Twitter</a>
-    </li>
-    <li>
-      <a href="https://www.instagram.com/neoneflux/">Instagram</a>
-    </li>
-    <!-- Add more social media links as needed -->
-  </ul>
+  <div id="links-container">
+    <a href="https://www.instagram.com/neoneflux/" target="_blank">Instagram</a>
+    <a href="https://twitter.com/__sSx3__" target="_blank">Twitter</a>
+    <a href="https://honkforhell.tumblr.com/" target="_blank">Tumblr</a>
+  </div>
 </body>
 </html>
+
