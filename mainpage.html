@@ -4,11 +4,13 @@
   <title>My Website</title>
   <style>
     @font-face {
-      font-family: 'Square Dot Digital-7';
-      src: url('SquareDotDigital-7.woff2') format('woff2'), /* Add WOFF2 font format */
-           url('SquareDotDigital-7.woff') format('woff'); /* Add WOFF font format */
-      /* Add additional font formats and paths if available */
-    }
+  font-family: 'Square Dot Digital-7';
+  src: url('SquareDotDigital-7.woff2') format('woff2'), /* Preferred format for modern browsers */
+       url('SquareDotDigital-7.woff') format('woff'), /* Fallback format for broader browser support */
+       url('SquareDotDigital-7.ttf') format('truetype'); /* Fallback format for Safari on iOS */
+  /* Add additional font formats and paths if available */
+}
+
 
     body {
       margin: 0;
@@ -101,4 +103,3 @@
   </script>
 </body>
 </html>
-
