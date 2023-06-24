@@ -1,0 +1,163 @@
+@font-face {
+    font-family: 'square_dot_digital-7regular';
+    src: url(fonts/square-dot-digital-7/square_dot_digital-7.ttf);
+    font-weight: normal;
+    font-style: normal;
+
+}
+/* ---------------------------------------------------------------------------------------------------------------------- */
+#MusicBody{
+    margin: 0;
+    padding: 0;
+    background: url('https://gdurl.com/XItDy') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+#socialMedia{
+    margin: 0;
+    padding: 0;
+    background: url('https://i.ibb.co/231M8bS/unnamed-1.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.mainpage{
+    margin: 0;
+    padding: 0;
+    font-family: 'Square Dot Digital-7', monospace;
+    -webkit-font-smoothing: antialiased; /* Adjust font rendering for better clarity on mobile devices */
+    -moz-osx-font-smoothing: grayscale;
+}
+   
+#video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+    
+#menu-container {
+    font-family: 'square_dot_digital-7regular';
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    overflow: hidden;
+    width: 200px;
+    border-radius: 25px;
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.8);
+}
+    
+.menu {
+    font-family:'square_dot_digital-7regular';
+    color: white;
+    font-size: 24px;
+    padding: 10px;
+    text-decoration: none;
+    display: block;
+    transition: height 0.5s;
+}
+
+.menu:not(.active) {
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+}
+/* ---------------------------------------------------------------------------------------------------------------------- */
+#HomeBody {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    -webkit-font-smoothing: antialiased; /* Adjust font rendering for better clarity on iOS */
+    font-family: 'square_dot_digital-7regular', monospace, Arial, sans-serif; /* Fallback font stack */
+}
+
+#photo-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("https://i.ibb.co/R95Vgb8/unnamed.jpg"); /* Replaced with the new image URL */
+    background-repeat: no-repeat;
+    background-size: cover; /* This will cover the entire container */
+    background-position: center; /* This will ensure the center of the image is always visible */
+    z-index: -1;
+}
+
+#logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotateY(0deg);
+    width: 50%; /* Adjusted to be relative to screen size */
+    height: auto; /* Adjusted to maintain aspect ratio */
+    animation: spin 6s linear infinite;
+}
+
+@keyframes spin {
+     0% {
+       transform: translate(-50%, -50%) rotateY(0deg);
+     }
+     100% {
+       transform: translate(-50%, -50%) rotateY(360deg);
+     }
+}
+
+#countdown {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 3vw; /* Adjusted to be relative to screen size */
+    color: #eb1d25;
+    font-family: 'square_dot_digital-7regular', monospace;
+}
+@media only screen and (max-width: 375px) {
+    #HomeBody{
+      font-size: 14px;
+    }
+    #countdown {
+      font-size: 18px;
+    }
+}
+@import url('https://fonts.googleapis.com/css2?family=Square+Dot+Digital-7&display=swap');
+
+/*------------------------------------------------------------------------------------------------------------------- */
+.music {
+    margin: 0;
+    padding: 0;
+    background: url('https://gdurl.com/XItDy') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#links-container {
+    font-family: 'square_dot_digital-7regular';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: grey;
+    font-size: 36px;
+}
+
+#links-container a {
+    display: inline-block;
+    margin-right: 20px;
+    color: grey;
+    text-decoration: none;
+}
+.links{
+    font-family: 'square_dot_digital-7regular' ;
+}
