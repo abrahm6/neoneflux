@@ -3,114 +3,13 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>neoneflux</title>
-  <style>
-    @font-face {
-    font-family: 'square_dot_digital-7regular';
-    src: url('square-dot-digital-7.regular-webfont.woff2') format('woff2'),
-         url('square-dot-digital-7.regular-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-
-}
-
-    body {
-      margin: 0;
-      padding: 0;
-      overflow: hidden;
-      -webkit-font-smoothing: antialiased; /* Adjust font rendering for better clarity on iOS */
-      font-family: "Square Dot Digital-7", monospace, Arial, sans-serif; /* Fallback font stack */
-    }
-
-    #photo-container {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: url("https://i.ibb.co/R95Vgb8/unnamed.jpg"); /* Replaced with the new image URL */
-      background-repeat: no-repeat;
-      background-size: cover; /* This will cover the entire container */
-      background-position: center; /* This will ensure the center of the image is always visible */
-      z-index: -1;
-    }
-
-    #logo {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%) rotateY(0deg);
-      width: 50%; /* Adjusted to be relative to screen size */
-      height: auto; /* Adjusted to maintain aspect ratio */
-      animation: spin 6s linear infinite;
-    }
-
-    @keyframes spin {
-       0% {
-         transform: translate(-50%, -50%) rotateY(0deg);
-       }
-       100% {
-         transform: translate(-50%, -50%) rotateY(360deg);
-       }
-    }
-
-    #countdown {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      font-size: 3vw; /* Adjusted to be relative to screen size */
-      color: #eb1d25;
-      font-family: "Square Dot Digital-7", monospace;
-    }
-    @media only screen and (max-width: 375px) {
-      body {
-        font-size: 14px;
-      }
-      #countdown {
-        font-size: 18px;
-      }
-    }
-    @import url('https://fonts.googleapis.com/css2?family=Square+Dot+Digital-7&display=swap');
-  </style>
-  <script>
-    function countdownTimer() {
-      var countdownElement = document.getElementById("countdown");
-      var remainingTime = 100 * 3600; // Start at 100 hours
-      var countdownDuration = 10000; // Total duration in milliseconds (10 seconds)
-      var startTime = Date.now();
-
-      var countdown = setInterval(function() {
-        var elapsedTime = Date.now() - startTime;
-        var progress = elapsedTime / countdownDuration;
-
-        if (elapsedTime >= countdownDuration) {
-          clearInterval(countdown);
-          remainingTime = 0;
-          window.location.href = "mainpage.html"; // Redirect to mainpage.html
-        } else {
-          remainingTime = Math.max(100 * 3600 - Math.floor(progress * 100 * 3600), 0);
-        }
-
-        var hours = Math.floor(remainingTime / 3600);
-        var minutes = Math.floor((remainingTime % 3600) / 60);
-        var seconds = remainingTime % 60;
-
-        countdownElement.textContent = `${padZero(hours)}:${padZero(minutes)}:${padZero(seconds)}`;
-      }, 10);
-
-      function padZero(value) {
-        return value.toString().padStart(2, "0");
-      }
-    }
-
-    document.addEventListener("DOMContentLoaded", function() {
-      countdownTimer();
-    });
-  </script>
+  <link rel = 'stylesheet' href ="styles.css"/>
 </head>
-<body>
+<body id ="HomeBody">
   <div id="photo-container">
     <img id="logo" src="https://gdurl.com/F5OI" alt="Logo">
   </div>
   <div id="countdown">100:</div>
+<script src="home.js" charset="UTF-8"></script>
 </body>
 </html>

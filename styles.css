@@ -41,7 +41,6 @@
     object-fit: cover;
     z-index: -1;
 }
-    
 #menu-container {
     font-family: 'square_dot_digital-7regular';
     position: absolute;
@@ -102,34 +101,32 @@
     height: auto; /* Adjusted to maintain aspect ratio */
     animation: spin 6s linear infinite;
 }
-
 @keyframes spin {
-     0% {
-       transform: translate(-50%, -50%) rotateY(0deg);
-     }
-     100% {
-       transform: translate(-50%, -50%) rotateY(360deg);
-     }
+    0% {
+      transform: translate(-50%, -50%) rotateY(0deg);
+    }
+    100% {
+      transform: translate(-50%, -50%) rotateY(360deg);
+    }
 }
 
 #countdown {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    font-size: 3vw; /* Adjusted to be relative to screen size */
-    color: #eb1d25;
-    font-family: 'square_dot_digital-7regular', monospace;
+   position: fixed;
+   bottom: 20px;
+   right: 20px;
+   font-size: 3vw; /* Adjusted to be relative to screen size */
+   color: #eb1d25;
+   font-family: 'square_dot_digital-7regular', monospace;
 }
 @media only screen and (max-width: 375px) {
-    #HomeBody{
-      font-size: 14px;
-    }
-    #countdown {
-      font-size: 18px;
-    }
+   #HomeBody{
+     font-size: 14px;
+   }
+   #countdown {
+     font-size: 18px;
+   }
 }
 @import url('https://fonts.googleapis.com/css2?family=Square+Dot+Digital-7&display=swap');
-
 /*------------------------------------------------------------------------------------------------------------------- */
 .music {
     margin: 0;

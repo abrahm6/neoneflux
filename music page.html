@@ -2,50 +2,14 @@
 <html>
 <head>
   <title>Music Page</title>
-  <style>
-   @font-face {
-    font-family: 'square_dot_digital-7regular';
-    src: url('square-dot-digital-7.regular-webfont.woff2') format('woff2'),
-         url('square-dot-digital-7.regular-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-
-}
-    body {
-      margin: 0;
-      padding: 0;
-      background: url('https://gdurl.com/XItDy') no-repeat center center fixed;
-      -webkit-background-size: cover;
-      -moz-background-size: cover;
-      -o-background-size: cover;
-      background-size: cover;
-    }
-
-    #links-container {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      text-align: center;
-      font-family: 'Square Dot Digital-7';
-      color: grey;
-      font-size: 36px;
-    }
-
-    #links-container a {
-      display: inline-block;
-      margin-right: 20px;
-      color: grey;
-      text-decoration: none;
-    }
-  </style>
+  <link rel="stylesheet" href ='styles.css'/>
 </head>
-<body>
+<body id="MusicBody">
 
   <div id="links-container">
-    <a href="https://music.apple.com/us/artist/niani/1642391421" target="_blank">Apple Music</a>
-    <a href="https://open.spotify.com/artist/6XR9nzDskINdFXa22MIxNC?" target="_blank">Spotify</a>
-    <a href="https://soundcloud.com/polaroidfiction" target="_blank">Soundcloud</a>
+    <a  class = 'links' href="https://music.apple.com/us/artist/niani/1642391421" target="_blank">Apple Music</a>
+    <a class = 'links' href="https://open.spotify.com/artist/6XR9nzDskINdFXa22MIxNC?" target="_blank">Spotify</a>
+    <a class = 'links' href="https://soundcloud.com/polaroidfiction" target="_blank">Soundcloud</a>
   </div>
 
 </body>
